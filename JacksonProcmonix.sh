@@ -1,0 +1,18 @@
+#!/bin/bash
+count=1
+while true
+do 
+        ps -e | awk -F " " '{print  $4}' > base1.txt
+        sleep 30
+        count=2
+        if [ "$count" -eq "2" ]
+        then 
+                ps -e | awk -F " " '{print  $4}' > base2.txt
+         fi
+break 
+done
+
+diff base1.txt base2.txt | tee compare.txt
+
+echo "DONE"
+
