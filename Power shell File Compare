@@ -1,0 +1,3 @@
+$base = "C:\Users\john.huntsman\Desktop\BaselineOfMachine.txt"
+$Compare = "C:\Users\john.huntsman\Desktop\ComparisonChanges.txt"
+Compare-Object -ReferenceObject (get-content $base) -DifferenceObject (Get-Content $Compare) |fl | Out-File C:\Users\john.huntsman\Desktop\ChangesOfMachine.txt
