@@ -1,0 +1,129 @@
+import random
+#include <iostream>
+print("\n" + "                                                        Welcome to Jackman's derp fest                         ")
+getClass = input(" What Class would you like to play? " + "\n " "Wizard? " "\n " "Fighter? " "\n " "Tank? " + " \n" + " " + " \n" + " ")
+getName = input(" What is your name? ")
+enemyName = "PlaceHolderName"
+charClass = "PlaceHolder"
+class Character:
+#defines character and, class methods, as well as the damage done method
+   def __init__(self, armour, power, life, name):
+       self.name = name
+       self.power = power
+       self.armour = armour
+       self.life = life
+   def Wizard(self):
+       print ("Hello, {}".format(getName))
+       print("\n" +"You are class Wizard with base armour of {}, and base life of {}, and base power of {}".format(self.armour , self.life , self.power))
+       print ("\n" + " you have an immunity to light magic \n")
+       getClass = Wizard
+   def Fighter(self):
+       print ("Hello, {}".format(getName))
+       print("\n" +"You are class Wizard with base armour of {}, and base life of {}, and base power of {}".format(self.armour , self.life , self.power))
+       print ("\n" + " you can choose to lose an armour stat for another stat if you want \n")
+       getClass = "Fighter"
+   def Tank(self):
+       print ("Hello, {}".format(getName))
+       print("\n" +"You are class Tank with base armour of {}, and base life of {}, and base power of {}".format(self.armour , self.life , self.power))
+       print ("\n" + " Items that add armour will add an additional 1 armour on pickup\n")
+       getClass = "Tank"
+   def hitOrder(self):
+       print("")
+   def damageDone(self, attacker, victim, attackPower, defenderArm):
+       ran1 = random.randint(1, 10)
+       #print (ran1)
+       #print (attackPower)
+       #print(defenderArm)
+       damage = (ran1 + attackPower) - defenderArm
+       if damage < 0:
+           damage = 0
+       print(damage)
+       self.life -= damage
+       if self.life < 0:
+           self.life = 0
+if damage <= 4:
+            print("{} attacks {}, but {} has barely been hit. {} takes {} points of damage {} health is now {} \n".format(attacker, victim, victim, victim, damage, victim, self.life))
+       elif damage >= 22:
+            print("Critical hit! {} attacks {} for {} Hitpoints. HP of {} is now at {}. \n".format(attacker, victim, damage, victim, self.life))
+       else:
+            print("{} attacks {} for {} Hitpoints the {} is now at {} hitpoints. \n".format(attacker, victim, damage, victim, self.life))
+def tankCheck():
+   if(charClass == "Tank"):
+       print (self.armour)
+       self.armour += 1
+def getPriority():
+   #sets priority for Combat Func
+   priority1 = random.randint(1, 20)
+   priority2 = random.randint(1, 20)
+   if (priority1 >= priority2):
+       print("{}, you have priority \n".format(getName))
+       enemyOne.damageDone(getName, enemyName, mainCharacter.power, enemyOne.armour)
+   else:
+       print("The {} has priority \n".format(enemyName))
+       mainCharacter.damageDone(enemyName, getName, enemyOne.power, mainCharacter.armour)
+def Combat():
+#puts priority and damage function / method together to form the Combat in the game
+   getPriority()
+   while True:
+       enemyOne.damageDone(getName, enemyName, mainCharacter.power, enemyOne.armour )
+       if enemyOne.life <= 0:
+           break
+       mainCharacter.damageDone(enemyName, getName, enemyOne.power, mainCharacter.armour)
+       if mainCharacter.life <= 0:
+           break
+       run = input("Run?")
+def pickClass():
+   if (getClass.lower().__contains__("w")):
+       #starts game if wizard is chosen
+       mainCharacter = Character(3,20,35,getName) #armour power life name to init character
+       mainCharacter.Wizard()
+   elif (getClass.lower().__contains__("f")):
+       # starts game if fighter is chosen
+       mainCharacter = Character(6, 12, 45, getName)  # armour power life name to init character
+       mainCharacter.Fighter()
+   else:
+       #starts game if tank is chosen
+       mainCharacter = Character(10, 6, 55, getName)  # armour power life name to init character
+       mainCharacter.Tank()
+def gameLoop():
+   startVar = random.randint(0,2)
+   instanceLoop = True
+   while (instanceLoop == True):
+       instanceVar = random.randint(0,2)
+       checker = input("\n")
+       print(instanceVar)
+       if("" in checker):
+           if instanceVar == 0:
+               print("you fight a troll")
+               enemyName = "troll"
+               troll = Character(0, 10, 60, enemyName)
+               Combat()
+               continue
+           elif instanceVar == 1:
+               print("You get a cookie")
+               print (mainCharacter.life)
+               mainCharacter.life += 1
+               print(mainCharacter.life)
+               continue
+           elif instanceVar == 2:
+               print("You walk into a room and find a glowing shield do you take it?")
+               take = input()
+               if take.lower().__contains__("y"):
+                   print ("you have fallen for a trap you must fight a spider for the shield")
+                   enemyName = "spider"
+                   enemyOne = Character(0, 5, 25, enemyName)
+                   Combat()
+                   print("You get more armour")
+                   self.armour +=1
+                   tankCheck()
+                   print ("you get the shield and plus 2 armor, congratulations")
+                   return enemyOne
+                   continue
+           else:
+               print("You win congratulations")
+               break
+       else:
+           print("I dont care continue on \n")
+pickClass()
+gameLoop()
+print("game over")
