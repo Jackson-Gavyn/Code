@@ -1,0 +1,24 @@
+from datetime import datetime
+import webbrowser
+import time
+day = "day"
+night = "night"
+print (" \n ")
+times = input("Going to play them sick beats what time would you like to begin? IE 13:33 \n")
+
+
+
+url =  input("Ethier insert a url to play or would you prefer default. Answer should ethier be default or Have a URL ")
+
+if(url.lower() == "default"): # checking for default option
+    url = "https://www.youtube.com/watch?v=hHW1oY26kxQ"
+
+while (day != night): # creating endless loop
+
+    now = datetime.now() #getting current datetime
+    normal = now.strftime("%H:%M") #calling only hour and minute
+    time.sleep(10) #sleeping to save system resources
+
+    if (normal == times): #opening url and breaking out of loop
+        webbrowser.open(url)
+        break
