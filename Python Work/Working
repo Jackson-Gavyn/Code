@@ -1,0 +1,45 @@
+import random
+
+#print("                                                          Welcome to the Jack Mans Derp Fest?     ")
+
+#getName = input("Whats that name \n")
+#getClass = input("Ight what class? \n")
+
+class Faction:
+    #vars go here
+    name = ""
+    type = ""
+    armor = ""
+    life = ""
+    power = ""
+
+    def __init__(self):
+        pass
+
+    def get_type(self):
+        return self.type
+
+    def set_type(self):
+        pass
+
+class Wiz(Faction):
+
+    def __init__(self,name,power,armor,life):
+        self.type = "Wiz"
+        self.name = name
+        self.power = power
+        self.armor = armor
+        self.life = life
+        super(Wiz,self).__init__()
+
+
+
+class Warlock(Faction):
+
+    def __init__(self,name,power,armor,life):
+        self.type = "Warlock"
+        self.name = name
+        self.power = power
+        self.armor = armor
+        self.life = life
+        super(Faction,self).__init__()
