@@ -1,0 +1,11 @@
+getText = input("Enter a String: ")
+words = getText.split()
+empty=""
+newLetter="B"
+
+for i in words:
+    temp = i[1:]
+    empty = empty + newLetter + temp + " "
+    print(empty)
+print(empty)
+
