@@ -139,8 +139,8 @@ def fire_bullet():
     #declare bulletstate as global if it needs to be changed
     global bulletstate
     global powerAmmo
-    powerAmmo -= 1
     if bulletstate == "ready":
+        powerAmmo -= 1
         os.system("afplay laser.wav&")
         bulletstate = "fire"
         #move bullet to just above player
