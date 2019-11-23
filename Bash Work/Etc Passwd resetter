@@ -1,0 +1,14 @@
+#!/bin/bash
+
+users=$(cat /etc/passwd | awk -F ":" '{print $1}')
+
+for port in $users
+do
+        if [ "$port" == "root" ]
+                then
+                continue
+        fi
+        
+sudo chsh "$port" -s /sbin/nologin
+echo $port
+done 
