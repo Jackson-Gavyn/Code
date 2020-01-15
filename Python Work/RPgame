@@ -1,0 +1,15 @@
+import random
+def gameIntro(): #runs inital class selection and intro processes
+    print ("Give me a class that you'd like to play please. ")
+    print(" ")
+
+def charSelect(): #Basic if statements for char select
+    charSelection = input("Options are 1: Wizard, 2: Fighter, 3: Tank ")
+    if (charSelection.lower().__contains__("w") or int(charSelection) == 1):
+        print ("Is a wizro " )
+    elif (charSelection.lower().__contains__("f") or int(charSelection) == 2):
+        print("Is a fighter ")
+    else:
+        print("Is a Tank ")
+
+gameIntro()
