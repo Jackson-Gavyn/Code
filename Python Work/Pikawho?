@@ -1,0 +1,44 @@
+import random
+from playsound import playsound
+
+#include <iostream>
+print("\n" + "                                                        Welcome to Jackman's derp fest                         ")
+getClass = input(" What Pokemon would you like to play? " + "\n " "Pikachu? " "\n " "Bonsly? " "\n " "Charmander? " + " \n" + " " + " \n" + " ")
+getName = input(" What is your name? ")
+enemyName = "PlaceHolderName"
+charClass = "PlaceHolder"
+
+
+class Character:
+    # defines character and, class methods, as well as the damage done method
+
+    def __init__(self, armour, power, life, name):
+       self.name = name
+       self.power = power
+       self.armour = armour
+       self.life = life
+
+    def pikachu(self):
+        # defining class pikachu and printing out information.
+        print ("Hello, {}".format(getName))
+        print("\n" + "Welcome Pikachu. You are fast as fuck boyyy. with base armour of {}, and base life of {}, and base power of {}".format(self.armour, self.life, self.power))
+        print("\n" + " Lightning attacks do no damage and increase your attack damage temporarily. \n")
+
+    def bonsly(self):
+        # defining class pikachu and printing out information.
+        print("Hello, {}".format(getName))
+        print(
+            "\n" + "Welcome Bonsly. You are a pimp by nature. with base armour of {}, and base life of {}, and base power of {}".format(
+                self.armour, self.life, self.power))
+        print("\n" + " You can one hit every enemy. \n")
+
+
+def char_select():
+    # function that decides what character class is being selected then sets the values and runs the Character script.
+    if (charClass.lower().__contains__("p")):
+        main_character = Character(1, 10, 20, getName)
+        main_character.pikachu()
+    elif (charClass.lower().__contains__("b")):
+        main_character = Character(1, 1, 1, "Bonsly Da pimp")
+        print("so  you have choosen death??")
+        main_character.bonsly()
