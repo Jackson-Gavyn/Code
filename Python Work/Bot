@@ -1,0 +1,31 @@
+import time
+from selenium import webdriver
+
+# For using Chrome
+
+browser = webdriver.Chrome('/home/gavyn/Downloads/chromedriver')
+
+#Bestbuy PS5 Page
+browser.get("https://www.bestbuy.com/site/sony-playstation-5-console/6426149.p?skuId=6426149")
+
+buyButton = False
+
+while not buyButton:
+
+    try:
+        # If this works then the button is not pytopen
+        addToCartBtn = addButton = browser.find_element_by_class_name("btn-disabled")
+
+        #Button isnt open restart the script
+        print("Button isnt ready yet")
+        
+        #Refresh Page after a delay
+        time.sleep(3)
+        browser.refresh()
+    except:
+        addToCartBtn = addButton = browser.find_elements_by_class_name("btn-primary")
+    
+        # Click the button and end the script
+        print("Button was clicked.")
+        addToCartBtn.click()
+        buyButton = True
